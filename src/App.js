@@ -1,21 +1,21 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import MainLayout from './components/layout/MainLayout/MainLayout';
+import NoteList from './components/views/NoteList/NoteList';
+import SingleNote from './components/views/SingleNote/SingleNote';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <MainLayout>
+          <Routes>
+            <Route path={'/'} element={<NoteList/>} />
+            <Route path={'/:id'} element={<SingleNote/>} />
+          </Routes>
+        </MainLayout>
+      </BrowserRouter>
     </div>
   );
 }
