@@ -7,6 +7,8 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import NoteList from './components/views/NoteList/NoteList';
 import SingleNote from './components/views/SingleNote/SingleNoteContainer';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   return (
     <div className="App">

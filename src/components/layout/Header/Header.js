@@ -1,9 +1,16 @@
 import React from 'react';
 
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+
 const Header = () => {
 
   return (
-    <h1>Notes App</h1>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="/">Notes App</Navbar.Brand>
+      </Container>
+    </Navbar>
   );
 };
 

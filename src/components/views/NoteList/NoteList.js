@@ -2,16 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import List from '../../features/List/ListContainer';
-import Form from '../../features/Form/FormContainer';
+import NoteForm from '../../features/NoteForm/NoteFormContainer';
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
 const NoteList  = () => {
 
   return (
-    <div>
-      <Form />
-      <List />
-    </div>
+    <Container>
+      <Row>
+        <NoteForm />
+      </Row>
+      <Row>
+        <List />
+      </Row>
+    </Container>
   );
 };
 
