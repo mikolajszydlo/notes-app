@@ -2,15 +2,23 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const SingleNote = () => {
+import Note from '../../features/Note/Note';
+import Button from '../../common/Button/ButtonContainer';
+
+const SingleNote = ({notes}) => {
   let params = useParams();
+
   return (
-    <h2>Single Note {params.id}</h2>
+    <div>
+      <Button variant='back' text='Go back'/>
+      <Button variant='delete' text='Delete note' noteId={params.id}/>
+      <Note note={notes.find(note => note.id.toString() === params.id)}/>
+    </div>
   );
 };
 
 SingleNote.propTypes = {
-  id: PropTypes.string,
+  notes: PropTypes.array,
 };
 
 export default SingleNote;

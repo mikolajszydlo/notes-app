@@ -1,21 +1,25 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import NoteList from './components/views/NoteList/NoteList';
-import SingleNote from './components/views/SingleNote/SingleNote';
+import SingleNote from './components/views/SingleNote/SingleNoteContainer';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <MainLayout>
-          <Routes>
-            <Route path={'/'} element={<NoteList/>} />
-            <Route path={'/:id'} element={<SingleNote/>} />
-          </Routes>
-        </MainLayout>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <MainLayout>
+            <Routes>
+              <Route path={'/'} element={<NoteList/>} />
+              <Route path={'/:id'} element={<SingleNote/>} />
+            </Routes>
+          </MainLayout>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }
